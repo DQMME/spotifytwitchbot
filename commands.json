@@ -1,0 +1,42 @@
+{
+  "pause": {
+    "usage": "!pause",
+    "enabled": true,
+    "permission": "MODERATOR"
+  },
+  "playlist": {
+    "usage": "!playlist",
+    "enabled": true,
+    "permission": "EVERYONE"
+  },
+  "previous": {
+    "usage": "!previous",
+    "enabled": true,
+    "permission": "MODERATOR"
+  },
+  "queue": {
+    "usage": "!queue",
+    "enabled": true,
+    "permission": "MODERATOR"
+  },
+  "skip": {
+    "usage": "!skip",
+    "enabled": true,
+    "permission": "MODERATOR"
+  },
+  "song": {
+    "usage": "!song",
+    "enabled": true,
+    "permission": "EVERYONE"
+  },
+  "start": {
+    "usage": "!start",
+    "enabled": true,
+    "permission": "MODERATOR"
+  },
+  "volume": {
+    "usage": "!volume",
+    "enabled": true,
+    "permission": "MODERATOR"
+  }
+}
