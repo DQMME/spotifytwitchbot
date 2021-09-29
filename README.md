@@ -5,7 +5,7 @@
 ## Features
 
 - **Customizable Command Usage**
-- **Customizable Command Message**
+- **Customizable Command Messages**
 - **Customizable Command Permission (User, Moderator, Broadcaster)**
 - **En/Disable Commands**
 - **Async**
