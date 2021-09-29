@@ -40,15 +40,12 @@ class PauseCommand(eventHandler: SimpleEventHandler) {
             pausePlayback { successful ->
                 //request was successful
                 if (successful) {
+                    val message = pauseCommand.message
+                        .replace("%user%", event.user.name)
+
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Du hast die Wiedergabe erfolgreich pausiert. @${event.user.name}"
-                    )
-                    //request wasn't successful
-                } else {
-                    event.twitchChat.sendMessage(
-                        event.channel.name,
-                        "Das hat nicht geklappt. @${event.user.name}"
+                        message
                     )
                 }
             }

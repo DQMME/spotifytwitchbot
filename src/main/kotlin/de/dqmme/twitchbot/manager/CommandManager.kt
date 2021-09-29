@@ -19,11 +19,15 @@ fun command(commandName: String): Command? {
 
     val enabled = enabledElement.asBoolean
 
+    val messageElement = commandObject.get("message") ?: return null
+
+    val message = messageElement.asString
+
     val permissionLevelElement = commandObject.get("permission") ?: return null
 
     val permissionLevel = parsePermissionLevel(permissionLevelElement.asString)
 
-    return Command(usage, enabled, permissionLevel)
+    return Command(usage, enabled, message, permissionLevel)
 }
 
 private fun parsePermissionLevel(name: String): PermissionLevel {

@@ -2,41 +2,49 @@
   "pause": {
     "usage": "!pause",
     "enabled": true,
+    "message": "Playback was paused successfully. @%user%",
     "permission": "MODERATOR"
   },
   "playlist": {
     "usage": "!playlist",
     "enabled": true,
+    "message": "The Playlist %name% from %owner% is currently running. (\"%link%\") @%user%",
     "permission": "EVERYONE"
   },
   "previous": {
     "usage": "!previous",
     "enabled": true,
+    "message": "The previous Song was played successfully. @%user%",
     "permission": "MODERATOR"
   },
   "queue": {
     "usage": "!queue",
     "enabled": true,
+    "message": "The Song was successfully added to the queue. @%user%",
     "permission": "MODERATOR"
   },
   "skip": {
     "usage": "!skip",
     "enabled": true,
+    "message": "The next Song was played successfully. @%user%",
     "permission": "MODERATOR"
   },
   "song": {
     "usage": "!song",
     "enabled": true,
+    "message": "%name% by %artist% is currently running. (\"%link%\") @%user%",
     "permission": "EVERYONE"
   },
   "start": {
     "usage": "!start",
     "enabled": true,
+    "message": "Playback was resumed successfully. @%user%",
     "permission": "MODERATOR"
   },
   "volume": {
     "usage": "!volume",
     "enabled": true,
+    "message": "The volume was successfully set to %volume%. @%user%",
     "permission": "MODERATOR"
   }
 }

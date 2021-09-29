@@ -12,7 +12,7 @@ class ChannelPointsListener(eventHandler: SimpleEventHandler) {
     }
 
     private fun onRewardRedeem(event: RewardRedeemedEvent) {
-        if(event.redemption.reward.title.lowercase() != Config.REWARD_NAME.lowercase()) return
+        if (event.redemption.reward.title.lowercase() != Config.REWARD_NAME.lowercase()) return
 
         val spotifySongId = spotifyIdFromText(event.redemption.userInput) ?: return
 

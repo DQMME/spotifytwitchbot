@@ -39,12 +39,13 @@ class SkipCommand(eventHandler: SimpleEventHandler) {
             //skip current song
             skipSong { successful ->
                 if (successful) {
+                    val message = skipCommand.message
+                        .replace("%user%", event.user.name)
+
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Du hast den aktuellen Song erfolgreich übersprungen. @${event.user.name}"
+                        message
                     )
-                } else {
-                    event.twitchChat.sendMessage(event.channel.name, "Da hat etwas nicht geklappt. @${event.user.name}")
                 }
             }
         }

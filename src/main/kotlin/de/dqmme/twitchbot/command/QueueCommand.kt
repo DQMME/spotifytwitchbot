@@ -52,15 +52,12 @@ class QueueCommand(eventHandler: SimpleEventHandler) {
             queueSong(spotifyId) { successful ->
                 //request was successful
                 if (successful) {
+                    val message = queueCommand.message
+                        .replace("%user%", event.user.name)
+
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Du den Song erfolgreich der Warteschlage hinzugefügt. @${event.user.name}"
-                    )
-                    //request wasn't successful
-                } else {
-                    event.twitchChat.sendMessage(
-                        event.channel.name,
-                        "Das hat nicht geklappt. @${event.user.name}"
+                        message
                     )
                 }
             }

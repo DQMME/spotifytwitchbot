@@ -34,7 +34,7 @@ object Bot {
     }
 
     fun start() {
-        if(Config.ENABLE_REWARD_SONG_REQUEST) {
+        if (Config.ENABLE_REWARD_SONG_REQUEST) {
             //listen for channel point redemptions
             channelIdByName(Config.TWITCH_CHANNEL_NAME) { channelId ->
                 twitchClient.pubSub.listenForChannelPointsRedemptionEvents(

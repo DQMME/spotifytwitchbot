@@ -41,14 +41,17 @@ class SongCommand(eventHandler: SimpleEventHandler) {
 
             //request current song
             requestCurrentSong { spotifySong ->
-                //no song is playing or an error occurred
-                if (spotifySong == null) {
-                    event.twitchChat.sendMessage(event.channel.name, "Gerade läuft kein Song. @${event.user.name}")
-                } else {
+                if (spotifySong != null) {
+                    val message = songCommand.message
+                        .replace("%name%", spotifySong.name)
+                        .replace("%artist%", spotifySong.artist)
+                        .replace("%link%", spotifySong.songUrl)
+                        .replace("%user%", event.user.name)
+
                     //send the current song to chat
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Gerade läuft ${spotifySong.name} von ${spotifySong.artist} (\"${spotifySong.songUrl}\"). @${event.user.name}"
+                        message
                     )
                 }
             }

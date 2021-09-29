@@ -62,15 +62,13 @@ class VolumeCommand(eventHandler: SimpleEventHandler) {
             setVolume(volume) { successful ->
                 //request was successful
                 if (successful) {
+                    val message = volumeCommand.message
+                        .replace("%volume%", "$volume%")
+                        .replace("%user%", event.user.name)
+
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Du hast die Lautstärke erfolgreich auf $volume% gesetzt. @${event.user.name}"
-                    )
-                    //request wasn't successful
-                } else {
-                    event.twitchChat.sendMessage(
-                        event.channel.name,
-                        "Das hat nicht geklappt. @${event.user.name}"
+                        message
                     )
                 }
             }

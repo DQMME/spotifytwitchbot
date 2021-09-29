@@ -40,15 +40,12 @@ class PreviousCommand(eventHandler: SimpleEventHandler) {
             previousSong { successful ->
                 //request was successful
                 if (successful) {
+                    val message = previousCommand.message
+                        .replace("%user%", event.user.name)
+
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Du hast erfolgreich den vorherigen Song abgespelt. @${event.user.name}"
-                    )
-                    //request wasn't successful
-                } else {
-                    event.twitchChat.sendMessage(
-                        event.channel.name,
-                        "Das hat nicht geklappt. @${event.user.name}"
+                        message
                     )
                 }
             }

@@ -39,14 +39,17 @@ class PlaylistCommand(eventHandler: SimpleEventHandler) {
             //request current playlist
             requestCurrentPlaylist { spotifyPlaylist ->
                 //no playlist is playing or an error occurred
-                if (spotifyPlaylist == null) {
-                    event.twitchChat.sendMessage(event.channel.name, "Gerade läuft keine Playlist. @${event.user.name}")
-                    return@requestCurrentPlaylist
-                } else {
+                if (spotifyPlaylist != null) {
+                    val message = playlistCommand.message
+                        .replace("%name%", spotifyPlaylist.name)
+                        .replace("%owner%", spotifyPlaylist.owner)
+                        .replace("%link%", spotifyPlaylist.url)
+                        .replace("%user%", event.user.name)
+
                     //send the current playlist to chat
                     event.twitchChat.sendMessage(
                         event.channel.name,
-                        "Gerade läuft die Playlist ${spotifyPlaylist.name} von ${spotifyPlaylist.owner}. ${spotifyPlaylist.url} @${event.user.name}"
+                        message
                     )
                 }
             }
