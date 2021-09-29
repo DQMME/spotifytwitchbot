@@ -195,11 +195,11 @@ Add*.
    ```
 </details>
 
-####Click your Start File (Windows or Linux) and go to *localhost:PORT/spotify* The Port is your Port defined in the Config File (default = 8000).
-####Click the Button called *Click here*.
-####Authorize Spotify.
-####Now you can restart the Bot and you can see if the Access Token got requested.
-###Finished!
+#### Click your Start File (Windows or Linux) and go to *localhost:PORT/spotify* The Port is your Port defined in the Config File (default = 8000).
+#### Click the Button called *Click here*.
+#### Authorize Spotify.
+#### Now you can restart the Bot and you can see if the Access Token got requested.
+### Finished!
 
 ## Credits
-####This Bot is using [Twitch4J](https://github.com/twitch4j/twitch4j), [Ini4J](https://mvnrepository.com/artifact/org.ini4j/ini4j), [Gson](https://github.com/google/gson), [OkHttp](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp) and [Ktor](https://ktor.io/)
+#### This Bot is using [Twitch4J](https://github.com/twitch4j/twitch4j), [Ini4J](https://mvnrepository.com/artifact/org.ini4j/ini4j), [Gson](https://github.com/google/gson), [OkHttp](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp) and [Ktor](https://ktor.io/)
