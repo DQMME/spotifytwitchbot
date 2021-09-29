@@ -15,7 +15,7 @@ fun main() {
     requestSpotifyToken { spotifyToken ->
         if (spotifyToken == null) {
             //cannot get Access Token
-            println("Access Token cannot be request. Make sure to follow the Steps on bla")
+            println("Access Token cannot be request. Make sure to follow the Steps on https://github.com/DQMME/spotifytwitchbot/")
 
             //start ktor webserver for spotify authorization
             startKtor()
