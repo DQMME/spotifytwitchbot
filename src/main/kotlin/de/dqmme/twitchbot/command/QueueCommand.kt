@@ -27,7 +27,7 @@ class QueueCommand(eventHandler: SimpleEventHandler) {
         if (!queueCommand.enabled) return
 
         //check for the command
-        if (command != queueCommand.name.lowercase()) return
+        if (command != queueCommand.usage.lowercase()) return
 
         if (args.size < 1) {
             event.twitchChat.sendMessage(event.channel.name, "Falscher Syntax! Verwendung: !queue <songurl>")

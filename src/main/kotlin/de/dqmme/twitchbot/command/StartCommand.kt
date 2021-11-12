@@ -27,7 +27,7 @@ class StartCommand(eventHandler: SimpleEventHandler) {
         if (!startCommand.enabled) return
 
         //check for the command
-        if (command != startCommand.name.lowercase()) return
+        if (command != startCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,

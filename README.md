@@ -76,6 +76,7 @@
 #### As Name we enter *Spotify Bot* again, but it doesn`t matter what name your application has.
 
 #### For this Bot, you don`t need a redirect URI at Twitch so we can enter something like https://example.com ad hit *
+
 Add*.
 
 #### As Category you choose *Chat Bot*.
@@ -142,6 +143,7 @@ Add*.
    ENABLE_REWARD_SONG_REQUEST = true
    REWARD_NAME = YOUR_SONG_REQUEST_REWARD_NAME
    ```
+
 </details>
 
 #### If you want to edit any of the Commands, you can edit the commands.json File.
@@ -154,52 +156,67 @@ Add*.
   "pause": {
     "usage": "!pause",
     "enabled": true,
+    "message": "Playback was paused successfully. @%user%",
     "permission": "MODERATOR"
   },
   "playlist": {
     "usage": "!playlist",
     "enabled": true,
+    "message": "The Playlist %name% from %owner% is currently running. (\"%link%\") @%user%",
     "permission": "EVERYONE"
   },
   "previous": {
     "usage": "!previous",
     "enabled": true,
+    "message": "The previous Song was played successfully. @%user%",
     "permission": "MODERATOR"
   },
   "queue": {
     "usage": "!queue",
     "enabled": true,
+    "message": "The Song was successfully added to the queue. @%user%",
     "permission": "MODERATOR"
   },
   "skip": {
     "usage": "!skip",
     "enabled": true,
+    "message": "The next Song was played successfully. @%user%",
     "permission": "MODERATOR"
   },
   "song": {
     "usage": "!song",
     "enabled": true,
+    "message": "%name% by %artist% is currently running. (\"%link%\") @%user%",
     "permission": "EVERYONE"
   },
   "start": {
     "usage": "!start",
     "enabled": true,
+    "message": "Playback was resumed successfully. @%user%",
     "permission": "MODERATOR"
   },
   "volume": {
     "usage": "!volume",
     "enabled": true,
+    "message": "The volume was successfully set to %volume%. @%user%",
     "permission": "MODERATOR"
   }
 }
    ```
+
 </details>
 
-#### Click your Start File (Windows or Linux) and go to *localhost:PORT/spotify* The Port is your Port defined in the Config File (default = 8000).
+#### Click your Start File (Windows or Linux) and go to *localhost:
+PORT/spotify* The Port is your Port defined in the Config File (default = 8000).
+
 #### Click the Button called *Click here*.
+
 #### Authorize Spotify.
+
 #### Now you can restart the Bot and you can see if the Access Token got requested.
+
 ### Finished!
 
 ## Credits
+
 #### This Bot is using [Twitch4J](https://github.com/twitch4j/twitch4j), [Ini4J](https://mvnrepository.com/artifact/org.ini4j/ini4j), [Gson](https://github.com/google/gson), [OkHttp](https://mvnrepository.com/artifact/com.squareup.okhttp3/okhttp) and [Ktor](https://ktor.io/)

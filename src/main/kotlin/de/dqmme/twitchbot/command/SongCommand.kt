@@ -30,7 +30,7 @@ class SongCommand(eventHandler: SimpleEventHandler) {
         if (!songCommand.enabled) return
 
         //check for the command
-        if (command != songCommand.name.lowercase()) return
+        if (command != songCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,

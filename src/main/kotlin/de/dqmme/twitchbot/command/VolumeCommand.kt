@@ -27,7 +27,7 @@ class VolumeCommand(eventHandler: SimpleEventHandler) {
         if (!volumeCommand.enabled) return
 
         //check for the command
-        if (command != volumeCommand.name.lowercase()) return
+        if (command != volumeCommand.usage.lowercase()) return
 
         if (args.size < 1) {
             event.twitchChat.sendMessage(event.channel.name, "Falscher Syntax! Verwendung: !volume <1-100>")

@@ -27,7 +27,7 @@ class PauseCommand(eventHandler: SimpleEventHandler) {
         if (!pauseCommand.enabled) return
 
         //check for the command
-        if (command != pauseCommand.name.lowercase()) return
+        if (command != pauseCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,

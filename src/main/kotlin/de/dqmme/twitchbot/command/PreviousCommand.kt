@@ -27,7 +27,7 @@ class PreviousCommand(eventHandler: SimpleEventHandler) {
         if (!previousCommand.enabled) return
 
         //check for the command
-        if (command != previousCommand.name.lowercase()) return
+        if (command != previousCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,

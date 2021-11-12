@@ -27,7 +27,7 @@ class SkipCommand(eventHandler: SimpleEventHandler) {
         if (!skipCommand.enabled) return
 
         //check for the command
-        if (command != skipCommand.name.lowercase()) return
+        if (command != skipCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,

@@ -27,7 +27,7 @@ class PlaylistCommand(eventHandler: SimpleEventHandler) {
         if (!playlistCommand.enabled) return
 
         //check for the command
-        if (command != playlistCommand.name.lowercase()) return
+        if (command != playlistCommand.usage.lowercase()) return
 
         checkPermission(
             event.channel.name,
