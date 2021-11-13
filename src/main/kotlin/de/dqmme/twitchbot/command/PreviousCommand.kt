@@ -5,6 +5,7 @@ import com.github.twitch4j.chat.events.channel.ChannelMessageEvent
 import de.dqmme.twitchbot.manager.checkPermission
 import de.dqmme.twitchbot.manager.command
 import de.dqmme.twitchbot.manager.previousSong
+import de.dqmme.twitchbot.util.Config
 
 class PreviousCommand(eventHandler: SimpleEventHandler) {
     init {
@@ -13,6 +14,8 @@ class PreviousCommand(eventHandler: SimpleEventHandler) {
     }
 
     private fun onChannelMessage(event: ChannelMessageEvent) {
+        if (event.channel.name.lowercase() != Config.TWITCH_CHANNEL_NAME.lowercase()) return
+
         val args = event.message
             .split(" ")
             .toMutableList()
@@ -27,7 +30,7 @@ class PreviousCommand(eventHandler: SimpleEventHandler) {
         if (!previousCommand.enabled) return
 
         //check for the command
-        if (command != previousCommand.usage.lowercase()) return
+        if (command != previousCommand.name.lowercase()) return
 
         checkPermission(
             event.channel.name,

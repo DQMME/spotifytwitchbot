@@ -5,6 +5,7 @@ import com.github.twitch4j.chat.events.channel.ChannelMessageEvent
 import de.dqmme.twitchbot.manager.checkPermission
 import de.dqmme.twitchbot.manager.command
 import de.dqmme.twitchbot.manager.queueSong
+import de.dqmme.twitchbot.util.Config
 
 class QueueCommand(eventHandler: SimpleEventHandler) {
     init {
@@ -13,6 +14,8 @@ class QueueCommand(eventHandler: SimpleEventHandler) {
     }
 
     private fun onChannelMessage(event: ChannelMessageEvent) {
+        if (event.channel.name.lowercase() != Config.TWITCH_CHANNEL_NAME.lowercase()) return
+
         val args = event.message
             .split(" ")
             .toMutableList()
@@ -27,7 +30,7 @@ class QueueCommand(eventHandler: SimpleEventHandler) {
         if (!queueCommand.enabled) return
 
         //check for the command
-        if (command != queueCommand.usage.lowercase()) return
+        if (command != queueCommand.name.lowercase()) return
 
         if (args.size < 1) {
             event.twitchChat.sendMessage(event.channel.name, "Falscher Syntax! Verwendung: !queue <songurl>")

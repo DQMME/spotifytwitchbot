@@ -14,7 +14,7 @@ class SongCommand(eventHandler: SimpleEventHandler) {
     }
 
     private fun onChannelMessage(event: ChannelMessageEvent) {
-        if (event.channel.name != Config.TWITCH_CHANNEL_NAME) return
+        if (event.channel.name.lowercase() != Config.TWITCH_CHANNEL_NAME.lowercase()) return
 
         val args = event.message
             .split(" ")
@@ -30,7 +30,7 @@ class SongCommand(eventHandler: SimpleEventHandler) {
         if (!songCommand.enabled) return
 
         //check for the command
-        if (command != songCommand.usage.lowercase()) return
+        if (command != songCommand.name.lowercase()) return
 
         checkPermission(
             event.channel.name,

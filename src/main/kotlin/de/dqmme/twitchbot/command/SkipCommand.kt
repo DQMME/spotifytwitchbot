@@ -5,6 +5,7 @@ import com.github.twitch4j.chat.events.channel.ChannelMessageEvent
 import de.dqmme.twitchbot.manager.checkPermission
 import de.dqmme.twitchbot.manager.command
 import de.dqmme.twitchbot.manager.skipSong
+import de.dqmme.twitchbot.util.Config
 
 class SkipCommand(eventHandler: SimpleEventHandler) {
     init {
@@ -13,6 +14,8 @@ class SkipCommand(eventHandler: SimpleEventHandler) {
     }
 
     private fun onChannelMessage(event: ChannelMessageEvent) {
+        if (event.channel.name.lowercase() != Config.TWITCH_CHANNEL_NAME.lowercase()) return
+
         val args = event.message
             .split(" ")
             .toMutableList()
@@ -27,7 +30,7 @@ class SkipCommand(eventHandler: SimpleEventHandler) {
         if (!skipCommand.enabled) return
 
         //check for the command
-        if (command != skipCommand.usage.lowercase()) return
+        if (command != skipCommand.name.lowercase()) return
 
         checkPermission(
             event.channel.name,
